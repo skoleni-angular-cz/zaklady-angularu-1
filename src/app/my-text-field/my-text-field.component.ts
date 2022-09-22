@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-my-text-field',
@@ -8,4 +8,12 @@ import { Component, Input } from '@angular/core';
 export class MyTextFieldComponent {
   @Input()
   placeholder: string = '';
+  @Output()
+  valueChanged = new EventEmitter<string>();
+
+  onInputTextChange($event: Event) {
+    const inputValue = ($event.target as HTMLInputElement).value;
+
+    this.valueChanged.emit(inputValue);
+  }
 }

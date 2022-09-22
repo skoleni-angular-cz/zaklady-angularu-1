@@ -12,4 +12,20 @@ export class AppComponent {
     title: 'Buy milk',
     completed: false,
   };
+
+  onTodoNameChange(todoName: string) {
+    // todo implement
+  }
+
+  onAddTodoButtonClick() {
+    // todo implement
+  }
+
+  onTodoCompleted(todoItem: TodoItem) {
+    // todo implement
+  }
+
+  onTodoRemove(todoItem: TodoItem) {
+    // todo implement
+  }
 }

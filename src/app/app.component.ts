@@ -7,11 +7,13 @@ import { TodoItem } from './todo.model';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  todoItem: TodoItem = {
-    id: 1,
-    title: 'Buy milk',
-    completed: false,
-  };
+  todoItems: TodoItem[] = [
+    {
+      id: 1,
+      title: 'Buy milk',
+      completed: false,
+    }
+  ];
 
   onTodoNameChange(todoName: string) {
     // todo implement

@@ -15,19 +15,29 @@ export class AppComponent {
     }
   ];
 
+  currentTodoName: string = '';
+
   onTodoNameChange(todoName: string) {
-    // todo implement
+    this.currentTodoName = todoName;
   }
 
   onAddTodoButtonClick() {
-    // todo implement
+    if (this.currentTodoName !== '') {
+      this.todoItems.push({
+        id: Number(new Date()),
+        title: this.currentTodoName,
+        completed: false,
+      });
+    }
   }
 
   onTodoCompleted(todoItem: TodoItem) {
-    // todo implement
+    const foundTodo = this.todoItems.find((ti) => ti.id === todoItem.id);
+
+    foundTodo.completed = true;
   }
 
   onTodoRemove(todoItem: TodoItem) {
-    // todo implement
+    this.todoItems = this.todoItems.filter((ti) => ti.id !== todoItem.id);
   }
 }

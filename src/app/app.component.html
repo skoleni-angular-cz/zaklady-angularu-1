@@ -1,13 +1,11 @@
 <h1 class="mb-3">Todo List</h1>
 
 <div class="d-flex mb-5">
-  <input
-    type="text"
-    class="form-control"
-    id="todo"
-    placeholder="write a todo..."
-  />
-  <button type="button" class="btn btn-primary ms-2">Add</button>
+  <app-my-text-field
+    class="flex-grow-1"
+    [placeholder]="'write a todo...'"
+  ></app-my-text-field>
+  <app-my-button [label]="'Add'"></app-my-button>
 </div>
 
 <div>
@@ -16,12 +14,8 @@
       <i class="bi bi-check-circle-fill text-success"></i>
       Buy Milk
     </div>
-    <button type="button" class="btn btn-primary d-inline-block ms-2">
-      Complete
-    </button>
-    <button type="button" class="btn btn-primary d-inline-block ms-2">
-      Remove
-    </button>
+    <app-my-button [label]="'Complete'"></app-my-button>
+    <app-my-button [label]="'Remove'"></app-my-button>
   </div>
   <hr class="m-0" />
 </div>

@@ -1,0 +1,13 @@
+<h1 class="mb-3">Todo List</h1>
+
+<div class="d-flex mb-5">
+  <app-text-field (textChanged)="todoNameChanged($event)"></app-text-field>
+  <app-button [label]="'Add'" (buttonClicked)="addTodo()"></app-button>
+</div>
+
+<app-todo-item
+  *ngFor="let item of todos"
+  [todoItem]="item"
+  (todoCompleteRequested)="completeTodo($event)"
+  (todoDeleteRequested)="deleteTodo($event)"
+></app-todo-item>
